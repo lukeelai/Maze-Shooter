@@ -6,13 +6,13 @@ public class BulletBehavior : MonoBehaviour {
 
     int counter = 0;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    // Use this for initialization
+    void Start () {
+
+    }
+
+// Update is called once per frame
+void Update () {
 		
 	}
 
@@ -23,9 +23,11 @@ public class BulletBehavior : MonoBehaviour {
             Debug.DrawRay(contact.point, contact.normal, Color.white);
             counter++;
         }
-        if (counter > 5) {
+        if (counter > 4) {
             Destroy(this.gameObject);
             counter = 0;
         }
+
+        if (collision.gameObject.tag == "Player") Destroy(this.gameObject);
     }
 }
